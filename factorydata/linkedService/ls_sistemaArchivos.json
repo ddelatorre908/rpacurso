@@ -1,0 +1,17 @@
+{
+	"name": "ls_sistemaArchivos",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "FileServer",
+		"typeProperties": {
+			"host": "D:\\BANCO PICHINCHA\\AZURE_DATA_FACTORY\\PRUEBAS_DATA_FACTORY",
+			"userId": "diego.dlt29@hotmail.com",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJhMmQ4OGU3Yy02Mjc4LTQxNzgtOGUwNi00NjQ0YTVhNmU4Y2UiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "rpacurso",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
