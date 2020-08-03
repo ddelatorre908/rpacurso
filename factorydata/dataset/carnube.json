@@ -1,0 +1,21 @@
+{
+	"name": "carnube",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dlsrpacurso1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
