@@ -1,0 +1,20 @@
+{
+	"name": "xlsx_cars2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sistemaArchivos",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Hoja1",
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": "CopiaCars"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}

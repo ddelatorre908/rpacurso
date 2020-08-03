@@ -1,0 +1,21 @@
+{
+	"name": "csv_cars",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sistemaArchivos",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
