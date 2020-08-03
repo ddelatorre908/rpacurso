@@ -1,7 +1,0 @@
-{
-	"name": "ir-rpa-curso",
-	"properties": {
-		"type": "SelfHosted",
-		"description": "On premise"
-	}
-}
