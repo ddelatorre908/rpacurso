@@ -1,6 +1,18 @@
 {
 	"name": "pl_factorial",
 	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "facto",
+					"value": ""
+				}
+			}
+		],
 		"parameters": {
 			"num_analizar": {
 				"type": "int",
@@ -11,6 +23,12 @@
 			"facto": {
 				"type": "String",
 				"defaultValue": "1"
+			},
+			"aux": {
+				"type": "String"
+			},
+			"rangeList": {
+				"type": "Array"
 			}
 		},
 		"annotations": []
