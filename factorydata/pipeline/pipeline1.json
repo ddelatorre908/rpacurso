@@ -31,7 +31,22 @@
 					"expression": {
 						"value": "@variables('EsPar')",
 						"type": "Expression"
-					}
+					},
+					"ifTrueActivities": [
+						{
+							"name": "Mensaje",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "resultado",
+								"value": {
+									"value": "El numero  @{pipeline().parameters.Numero} es Par ",
+									"type": "Expression"
+								}
+							}
+						}
+					]
 				}
 			}
 		],
@@ -43,6 +58,9 @@
 		"variables": {
 			"EsPar": {
 				"type": "Boolean"
+			},
+			"resultado": {
+				"type": "String"
 			}
 		},
 		"annotations": []
