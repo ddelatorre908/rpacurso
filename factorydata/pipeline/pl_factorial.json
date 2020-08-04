@@ -48,7 +48,7 @@
 							}
 						},
 						{
-							"name": "Set variable2",
+							"name": "Sete_factorial",
 							"type": "SetVariable",
 							"dependsOn": [
 								{
@@ -61,7 +61,10 @@
 							"userProperties": [],
 							"typeProperties": {
 								"variableName": "aux",
-								"value": ""
+								"value": {
+									"value": "@variables('facto')",
+									"type": "Expression"
+								}
 							}
 						}
 					]
