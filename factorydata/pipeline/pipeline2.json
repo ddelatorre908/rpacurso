@@ -1,0 +1,43 @@
+{
+	"name": "pipeline2",
+	"properties": {
+		"activities": [
+			{
+				"name": "Lookup1",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": {
+							"value": "DECLARE @MinDate DATE = '@{pipeline().parameters.fechadesde}',\n        @MaxDate DATE = '@{pipeline().parameters.fechahasta}';SELECT fechaCorte, MONTH(fechaCorte) as mesCorte, YEAR(fechaCorte) as anioCorte\nFROM\n(\n SELECT\n TOP (DATEDIFF(MONTH, @MinDate, @MaxDate) + 1)\n fechaCorte = EOMONTH(DATEADD(MONTH, ROW_NUMBER() OVER(ORDER BY a.object_id) - 1, @MinDate))\n FROM    sys.all_objects a\n CROSS JOIN sys.all_objects b\n)fechasORDER BY fechaCorte;",
+							"type": "Expression"
+						},
+						"queryTimeout": "02:00:00"
+					},
+					"dataset": {
+						"referenceName": "SqlServerTable1",
+						"type": "DatasetReference"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"fechadesde": {
+				"type": "string"
+			},
+			"fechahasta": {
+				"type": "string"
+			}
+		},
+		"annotations": []
+	}
+}
