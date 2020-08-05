@@ -18,7 +18,7 @@
 					"source": {
 						"type": "SqlServerSource",
 						"sqlReaderQuery": {
-							"value": "DECLARE @MinDate DATE = '@{pipeline().parameters.fechadesde}',\n        @MaxDate DATE = '@{pipeline().parameters.fechahasta}';SELECT fechaCorte, MONTH(fechaCorte) as mesCorte, YEAR(fechaCorte) as anioCorte\nFROM\n(\n SELECT\n TOP (DATEDIFF(MONTH, @MinDate, @MaxDate) + 1)\n fechaCorte = EOMONTH(DATEADD(MONTH, ROW_NUMBER() OVER(ORDER BY a.object_id) - 1, @MinDate))\n FROM    sys.all_objects a\n CROSS JOIN sys.all_objects b\n)fechasORDER BY fechaCorte;",
+							"value": "DECLARE @MinDate DATE = '@{pipeline().parameters.fechaDesde}',\n        @MaxDate DATE = '@{pipeline().parameters.fechaHasta}';SELECT fechaCorte, MONTH(fechaCorte) as mesCorte, YEAR(fechaCorte) as anioCorte\nFROM\n(\n SELECT\n TOP (DATEDIFF(MONTH, @MinDate, @MaxDate) + 1)\n fechaCorte = EOMONTH(DATEADD(MONTH, ROW_NUMBER() OVER(ORDER BY a.object_id) - 1, @MinDate))\n FROM    sys.all_objects a\n CROSS JOIN sys.all_objects b\n)fechasORDER BY fechaCorte;",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00"
@@ -58,13 +58,7 @@
 									"referenceName": "plcarga",
 									"type": "PipelineReference"
 								},
-								"waitOnCompletion": true,
-								"parameters": {
-									"fecharecorte": {
-										"value": "@item().fechaCorte",
-										"type": "Expression"
-									}
-								}
+								"waitOnCompletion": true
 							}
 						}
 					]
@@ -72,10 +66,10 @@
 			}
 		],
 		"parameters": {
-			"fechadesde": {
+			"fechaDesde": {
 				"type": "string"
 			},
-			"fechahasta": {
+			"fechaHasta": {
 				"type": "string"
 			}
 		},

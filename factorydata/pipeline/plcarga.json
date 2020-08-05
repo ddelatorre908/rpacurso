@@ -51,11 +51,11 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"directorio": {
-								"value": "@formatDateTime(pipeline().parameters.fecharecorte,'yyyy/MM')",
+								"value": "@formatDateTime(pipeline().parameters.fechaCorte,'yyyy/MM')",
 								"type": "Expression"
 							},
-							"nombrearchivo": {
-								"value": "@pipeline().parameters.fecharecorte",
+							"nombreArchivo": {
+								"value": "@pipeline().parameters.fechaCorte",
 								"type": "Expression"
 							}
 						}

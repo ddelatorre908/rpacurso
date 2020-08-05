@@ -9,7 +9,7 @@
 			"directorio": {
 				"type": "string"
 			},
-			"nombrearchivo": {
+			"nombreArchivo": {
 				"type": "string"
 			}
 		},
