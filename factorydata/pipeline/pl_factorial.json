@@ -60,9 +60,9 @@
 							],
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "aux",
+								"variableName": "facto",
 								"value": {
-									"value": "@variables('facto')",
+									"value": "@variables('aux')",
 									"type": "Expression"
 								}
 							}
