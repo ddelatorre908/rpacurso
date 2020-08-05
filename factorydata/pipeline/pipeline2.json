@@ -45,7 +45,22 @@
 					"items": {
 						"value": "@array(activity('Lookup1').output.value)",
 						"type": "Expression"
-					}
+					},
+					"activities": [
+						{
+							"name": "plcarga",
+							"type": "ExecutePipeline",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "plcarga",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true
+							}
+						}
+					]
 				}
 			}
 		],
