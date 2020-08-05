@@ -19,7 +19,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "Orden/@{dataset().nombrearchivo}.parquet",
+					"value": "Orden/@{dataset().nombreArchivo}.parquet",
 					"type": "Expression"
 				},
 				"folderPath": {
