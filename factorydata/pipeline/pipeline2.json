@@ -46,6 +46,7 @@
 						"value": "@array(activity('Lookup1').output.value)",
 						"type": "Expression"
 					},
+					"isSequential": false,
 					"activities": [
 						{
 							"name": "plcarga",
@@ -57,7 +58,13 @@
 									"referenceName": "plcarga",
 									"type": "PipelineReference"
 								},
-								"waitOnCompletion": true
+								"waitOnCompletion": true,
+								"parameters": {
+									"fecharecorte": {
+										"value": "@item().fechaCorte",
+										"type": "Expression"
+									}
+								}
 							}
 						}
 					]
